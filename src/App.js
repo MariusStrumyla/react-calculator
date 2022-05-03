@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-// import ReactDOM from 'react-dom';
-// import ScotchInfoBar from './ScotchInfoBar';
 
 function App() {
   const [number1, setNumber1] = useState(0);
