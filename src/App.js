@@ -1,23 +1,40 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+// import ReactDOM from 'react-dom';
+// import ScotchInfoBar from './ScotchInfoBar';
 
 function App() {
+  const [number1, setNumber1] = useState(0);
+  const [number2, setNumber2] = useState(0);
+  const [total, setTotal] = useState(number1 + number2);
+
+  function addThoseGuysTogether() {
+    setTotal(number1 + number2);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Stupid simple calc</h1>
+
+      <div className="number-inputs">
+        <input 
+        type="number" 
+        placeholder="0" 
+        value = {number1}
+        onChange = {e => setNumber1(+e.target.value)}
+        />
+        <input 
+        type="number" 
+        placeholder="0" 
+        value = {number2}
+        onChange = {e => setNumber2(+e.target.value)}
+        />
+      </div>
+
+      <button onClick={addThoseGuysTogether}>Add numbers</button>
+
+      <h2>{total}</h2>
+
     </div>
   );
 }
